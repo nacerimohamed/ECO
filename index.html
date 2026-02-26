@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Élégance Shop - Images</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <h2 class="logo">Élégance</h2>
+    <div class="nav-links">
+        <a href="#" id="home-link">Accueil</a>
+        <a href="#" id="cart-link">🛒 Panier <span id="cartCount">0</span></a>
+        <a href="#" id="admin-link">Admin</a>
+    </div>
+</nav>
+
+<!-- PAGE ACCUEIL -->
+<section id="homePage">
+    <h1>Nos Produits</h1>
+    <div class="filter-bar">
+        <button class="filter-btn active" data-category="all">Tous</button>
+        <button class="filter-btn" data-category="vêtements">Vêtements</button>
+        <button class="filter-btn" data-category="accessoires">Accessoires</button>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+</section>
+
+<!-- PAGE PANIER -->
+<section id="cartPage" style="display:none;">
+    <h1>Votre Panier</h1>
+    <div id="cartItemsContainer"></div>
+    <div id="cartSummary">
+        <p>Total : <strong id="cartTotal">0 €</strong></p>
+        <button id="checkoutBtn">Valider la commande</button>
+        <button id="clearCartBtn">Vider le panier</button>
+    </div>
+</section>
+
+<!-- PAGE ADMIN -->
+<section id="adminPage" style="display:none;">
+    <!-- LOGIN -->
+    <div id="adminLogin">
+        <h2>Connexion Admin</h2>
+        <input type="email" id="adminEmail" placeholder="Email" value="admin@shop.com">
+        <input type="password" id="adminPassword" placeholder="Mot de passe" value="1234">
+        <button id="adminLoginBtn">Se connecter</button>
+    </div>
+
+    <!-- PANEL ADMIN -->
+    <div id="adminPanel" style="display:none;">
+        <h2>Ajouter / Modifier un produit</h2>
+        <input type="text" id="productId" placeholder="ID (automatique)" readonly style="background:#eee;">
+        <input type="text" id="productName" placeholder="Nom du produit">
+        <input type="number" id="productPrice" placeholder="Prix (€)">
+        <select id="productCategory">
+            <option value="vêtements">Vêtements</option>
+            <option value="accessoires">Accessoires</option>
+        </select>
+        <input type="url" id="productImage" placeholder="URL de l'image (ex: https://...)" value="https://placehold.co/150x150/orange/white?text=Produit">
+        <button id="addProductBtn">Ajouter</button>
+        <button id="updateProductBtn" style="display:none;">Modifier</button>
+        <button id="cancelEditBtn" style="display:none;">Annuler</button>
+
+        <h3>Liste des produits</h3>
+        <div id="adminProductList"></div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
